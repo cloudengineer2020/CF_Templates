@@ -24,6 +24,10 @@
         "krrsg": {
             "Description": "select security group",
             "Type": "AWS::EC2::SecurityGroup::Id"
+        },
+        "subnet": {
+            "Description": "select subnet",
+            "Type": "AWS::EC2::Subnet::Id"
         }
     },
     "Resources": {
@@ -44,6 +48,9 @@
                         "Ref": "krrsg"
                     }
                 ],
+                "SubnetId": {
+                    "Ref": "subnet"
+                },
                 "Tags": [
                     {
                         "Key": "Name",
